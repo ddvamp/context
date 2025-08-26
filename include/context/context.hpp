@@ -6,11 +6,11 @@
 #ifndef DDVAMP_CONTEXT_CONTEXT_HPP_INCLUDED_
 #define DDVAMP_CONTEXT_CONTEXT_HPP_INCLUDED_ 1
 
-#include <util/debug/unreachable.hpp>
-#include <util/memory/view.hpp>
-
 #include "exceptions_context.hpp"
 #include "machine_context.hpp"
+
+#include <util/debug/unreachable.hpp>
+#include <util/memory/view.hpp>
 
 namespace context {
 

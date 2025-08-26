@@ -6,6 +6,25 @@
 #ifndef DDVAMP_CONTEXT_MACHINE_CONTEXT_HPP_INCLUDED_
 #define DDVAMP_CONTEXT_MACHINE_CONTEXT_HPP_INCLUDED_ 1
 
-#include "arch/x86_64/machine_context.hpp" // IWYU pragma: export
+#include <context/trampoline.hpp>
+
+#include <util/memory/view.hpp>
+
+namespace context {
+
+class MachineContext {
+ private:
+  void *rsp_;
+
+ public:
+  // Set initial context
+  void Setup(::util::memory_view stack, ITrampoline *trampoline) noexcept;
+
+  // Save current context in this and reset target context
+  // (this and target are allowed to be aliased)
+  void SwitchTo(MachineContext &target) noexcept;
+};
+
+} // namespace context
 
 #endif /* DDVAMP_CONTEXT_MACHINE_CONTEXT_HPP_INCLUDED_ */

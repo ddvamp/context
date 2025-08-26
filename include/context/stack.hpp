@@ -6,11 +6,11 @@
 #ifndef DDVAMP_CONTEXT_STACK_HPP_INCLUDED_
 #define DDVAMP_CONTEXT_STACK_HPP_INCLUDED_ 1
 
-#include <cstddef>
-#include <utility>
-
 #include <util/debug/assert.hpp>
 #include <util/memory/page_allocation.hpp>
+
+#include <cstddef>
+#include <utility>
 
 namespace context {
 

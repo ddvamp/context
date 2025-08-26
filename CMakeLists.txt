@@ -19,10 +19,7 @@ list(
 add_library(context STATIC)
 target_sources(context PRIVATE ${context_sources})
 
-target_include_directories(
-  context PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
-  context PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src
-)
+target_include_directories(context PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 target_compile_features(context PUBLIC cxx_std_23)
 
