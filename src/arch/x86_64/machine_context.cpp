@@ -1,9 +1,14 @@
+//
+// machine_context.cpp
+// ~~~~~~~~~~~~~~~~~~~
+//
 // Copyright (C) 2023-2025 Artyom Kolpakov <ddvamp007@gmail.com>
 //
 // Licensed under GNU GPL-3.0-or-later.
 // See file LICENSE or <https://www.gnu.org/licenses/> for details.
+//
 
-#include "context/machine_context.hpp"
+#include <context/machine_context.hpp>
 
 namespace context {
 
@@ -15,8 +20,9 @@ namespace {
   static_cast<ITrampoline *>(arg7)->Run();
 }
 
-extern "C" void *SetupMachineContext(void *stack,
-    decltype(MachineContextTrampoline) trampoline, void *arg) noexcept;
+extern "C" void *SetupMachineContext(
+    void *stack, decltype(MachineContextTrampoline) trampoline,
+    void *arg) noexcept;
 
 extern "C" void SwitchMachineContext(void **from, void **to) noexcept;
 

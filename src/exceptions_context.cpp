@@ -1,9 +1,14 @@
+//
+// exceptions_context.cpp
+// ~~~~~~~~~~~~~~~~~~~~~~
+//
 // Copyright (C) 2023-2025 Artyom Kolpakov <ddvamp007@gmail.com>
 //
 // Licensed under GNU GPL-3.0-or-later.
 // See file LICENSE or <https://www.gnu.org/licenses/> for details.
+//
 
-#include "context/exceptions_context.hpp"
+#include <context/exceptions_context.hpp>
 
 #include <cstring>
 

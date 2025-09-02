@@ -1,13 +1,18 @@
+//
+// context.hpp
+// ~~~~~~~~~~~
+//
 // Copyright (C) 2023-2025 Artyom Kolpakov <ddvamp007@gmail.com>
 //
 // Licensed under GNU GPL-3.0-or-later.
 // See file LICENSE or <https://www.gnu.org/licenses/> for details.
+//
 
 #ifndef DDVAMP_CONTEXT_CONTEXT_HPP_INCLUDED_
 #define DDVAMP_CONTEXT_CONTEXT_HPP_INCLUDED_ 1
 
-#include "exceptions_context.hpp"
-#include "machine_context.hpp"
+#include <context/exceptions_context.hpp>
+#include <context/machine_context.hpp>
 
 #include <util/debug/unreachable.hpp>
 #include <util/memory/view.hpp>
@@ -34,8 +39,8 @@ class ExecutionContext {
   ExecutionContext() = default;
 
   // Initializes new context with stack using trampoline
-  ExecutionContext(::util::memory_view stack, ITrampoline *trampoline)
-      noexcept {
+  ExecutionContext(::util::memory_view stack,
+                   ITrampoline *trampoline) noexcept {
     machine_ctx_.Setup(stack, trampoline);
   }
 
