@@ -55,12 +55,8 @@ class [[nodiscard]] Stack {
     return allocation_.view();
   }
 
-  static Stack Acquire(::util::memory_view view) noexcept {
-    return ::util::page_allocation::acquire(view);
-  }
-
-  [[nodiscard]] ::util::memory_view Release() && noexcept {
-    return ::std::move(allocation_).release();
+  [[nodiscard]] ::std::byte *Memory() noexcept {
+    return allocation_.begin() + ::util::page_allocation::page_size();
   }
 
  private:
